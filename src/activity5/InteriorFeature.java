@@ -19,7 +19,7 @@ public class InteriorFeature implements Feature {
    */
 
   public InteriorFeature() {
-    interiorFeature = "Generic";
+    this.interiorFeature = "Generic";
   }
 
   /**

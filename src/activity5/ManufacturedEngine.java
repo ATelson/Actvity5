@@ -48,16 +48,16 @@ public class ManufacturedEngine implements Engine {
    * @param engineType for the type of engine.
    */
   public ManufacturedEngine(String engineManufacturer, Date engineManufacturedDate,
-      String engineMake, String engineModel, String driveTrain, int engineCylinders,
-      String engineType) {
+      String engineMake, String engineModel, String engineType, int engineCylinders,
+      String driveTrain) {
 
     this.engineManufacturer = engineManufacturer;
     this.engineManufacturedDate = engineManufacturedDate;
     this.engineMake = engineMake;
     this.engineModel = engineModel;
-    this.driveTrain = driveTrain;
-    this.engineCylinders = engineCylinders;
     this.engineType = engineType;
+    this.engineCylinders = engineCylinders;
+    this.driveTrain = driveTrain;
   }
 
   /**
@@ -75,7 +75,7 @@ public class ManufacturedEngine implements Engine {
    * @param date is used as a passing argument to set date to specific time.
    */
   public void setEngineManufacturedDate(Date date) {
-    engineManufacturedDate = date;
+    this.engineManufacturedDate = date;
   }
 
   /**
@@ -84,7 +84,7 @@ public class ManufacturedEngine implements Engine {
    * @param manufacturer is used to set name of engine manufacturer.
    */
   public void setEngineManufacturer(String manufacturer) {
-    engineManufacturer = manufacturer;
+    this.engineManufacturer = manufacturer;
   }
 
   /**
@@ -129,12 +129,12 @@ public class ManufacturedEngine implements Engine {
   @Override
   public String toString() {
 
-    return "Engine Manufacturer    : " + engineManufacturer + "\n"
-        + "Engine Manufactured    : " + engineManufacturedDate + "\n"
-        + "Engine Make            : " + engineMake + "\n"
-        + "Engine Model           : " + engineModel + "\n"
-        + "Engine Type            : " + engineType + "\n"
-        + "Engine Cylinders       : " + engineCylinders + "\n"
-        + "Drive Train            :" + driveTrain;
+    return "Engine Manufacturer    : " + this.engineManufacturer + "\n"
+        + "Engine Manufactured    : " + this.engineManufacturedDate + "\n"
+        + "Engine Make            : " + this.engineMake + "\n"
+        + "Engine Model           : " + this.engineModel + "\n"
+        + "Engine Type            : " + this.engineType + "\n"
+        + "Engine Cylinders       : " + this.engineCylinders + "\n"
+        + "Drive Train            :" + this.driveTrain;
   }
 }

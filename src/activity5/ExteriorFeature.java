@@ -18,7 +18,7 @@ public class ExteriorFeature implements Feature {
    * Default constructor that sets interiorFeature to "Generic".
    */
   public ExteriorFeature() {
-    exteriorFeature = "Generic";
+    this.exteriorFeature = "Generic";
   }
 
   /**

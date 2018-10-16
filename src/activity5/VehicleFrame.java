@@ -17,7 +17,7 @@ public class VehicleFrame implements Chassis {
    * A public default constructor that sets vehicleFrameType to "Unibody".
    */
   public VehicleFrame() {
-    vehicleFrameType = "Unibody";
+    this.vehicleFrameType = "Unibody";
   }
 
   /**
@@ -54,7 +54,7 @@ public class VehicleFrame implements Chassis {
    */
   @Override
   public String toString() {
-    return "Chassis:         " + chassis + "\n"
-        + "Vehicle Frame:   " + vehicleFrameType;
+    return "Chassis:         " + this.chassis + "\n"
+        + "Vehicle Frame:   " + this.vehicleFrameType;
   }
 }

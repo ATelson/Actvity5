@@ -15,7 +15,7 @@ import java.util.Date;
 public final class Car extends Vehicle {
 
   //field used to create list of features and a field used to as car axle
-  private Feature[] feature;
+  private Feature[] featureList;
   private int carAxle;
 
   /**
@@ -24,9 +24,9 @@ public final class Car extends Vehicle {
 
   public Car() {
     super();
-    Feature[] f = {new InteriorFeature("No Interior Features"),
+    Feature[] list = {new InteriorFeature("No Interior Features"),
         new ExteriorFeature("No Exterior Features")};
-    this.feature = f;
+    this.featureList = list;
     this.carAxle = 2;
   }
 
@@ -34,23 +34,24 @@ public final class Car extends Vehicle {
    * Overloaded constructor that passes arguments which are used to set fields within the Car
    * object. Uses super() method to pass parameters as arguments from the Vehicle class.
    *
-   * @param vehicleManufacturer is used to set vehicleManufacturer.
    * @param vehicleManufacturedDate is used to set vehicleManufacturedDate.
+   * @param vehicleManufacturer is used to set vehicleManufacturer.
    * @param vehicleMake is used to set vehicleMake.
    * @param vehicleModel is used to set vehicleModel.
-   * @param vehicleType is used to set vehicleType.
    * @param vehicleFrame is used to set vehicleFrame.
+   * @param vehicleType is used to set vehicleType.
+   * @param driveTrain is used to set drive train.
    * @param vehicleEngine is used to set vehicleEngine.
    * @param feature is used to set the list of features.
    * @param carAxle is used to set carAxle.
    */
-  public Car(String vehicleManufacturer, Date vehicleManufacturedDate, String vehicleMake
-      , String vehicleModel, String vehicleType, Chassis vehicleFrame, Engine vehicleEngine,
+  public Car(Date vehicleManufacturedDate, String vehicleManufacturer, String vehicleMake
+      , String vehicleModel, Chassis vehicleFrame, String vehicleType, String driveTrain, Engine vehicleEngine,
       Feature[] feature, int carAxle) {
 
-    super(vehicleManufacturer, vehicleManufacturedDate, vehicleMake, vehicleModel, vehicleType,
-        vehicleFrame, vehicleEngine);
-    this.feature = feature;
+    super(vehicleManufacturedDate, vehicleManufacturer, vehicleMake, vehicleModel, vehicleFrame, vehicleType,
+        driveTrain, vehicleEngine);
+    this.featureList = feature;
     this.carAxle = carAxle;
 
   }
@@ -66,21 +67,21 @@ public final class Car extends Vehicle {
     String exteriorFeatureList = "";
 
     //used to access all elements within the Feature array
-    for (int i = 0; i < this.feature.length; i++) {
+    for (int i = 0; i < this.featureList.length; i++) {
 
       //if the element with the feature array is an instance of ExteriorFeature
-      if (this.feature[i] instanceof ExteriorFeature) {
+      if (this.featureList[i] instanceof ExteriorFeature) {
 
         // if the exteriorFeatureList length is 0
         if (exteriorFeatureList.length() == 0) {
 
           // add feature element to exteriorFeatureList
-          exteriorFeatureList += this.feature[i];
+          exteriorFeatureList += this.featureList[i];
         }
 
         // else add tab below, add space and add feature element to exteriorFeatureList
         else {
-          exteriorFeatureList += "\n          :  " + this.feature[i];
+          exteriorFeatureList += "\n          :  " + this.featureList[i];
         }// end of else statement
       }// end of if-else statement
     }// end of for loop
@@ -98,20 +99,20 @@ public final class Car extends Vehicle {
     String interiorFeatureList = "";
 
     //used to access all elements within the Feature array
-    for (int i = 0; i < this.feature.length; i++) {
+    for (int i = 0; i < this.featureList.length; i++) {
 
       //if the element with the feature array is an instance of InteriorFeature
-      if (this.feature[i] instanceof InteriorFeature) {
+      if (this.featureList[i] instanceof InteriorFeature) {
 
         // if the interiorFeatureList length is 0
         if (interiorFeatureList.length() == 0) {
 
           // add feature element to interiorFeatureList
-          interiorFeatureList += this.feature[i];
+          interiorFeatureList += this.featureList[i];
         }
         // else add tab below, add space and add feature element to interiorFeatureList
         else {
-          interiorFeatureList += "\n          " + this.feature[i];
+          interiorFeatureList += "\n          " + this.featureList[i];
         } // end of else statement
       } // end of if-else statement
     } // end of for loop
@@ -131,17 +132,17 @@ public final class Car extends Vehicle {
     String featureList = "";
 
     //use a for loop to access all elements within array
-    for (int i = 0; i < this.feature.length; i++) {
+    for (int i = 0; i < this.featureList.length; i++) {
 
       // if the array length is 0 then add feature element to featureList String
-      if (this.feature.length == 0) {
-        featureList += this.feature[i];
+      if (this.featureList.length == 0) {
+        featureList += this.featureList[i];
       }
 
       //else tab down and add white space to match the format of loaded information
       //and add feature element to feature list.
       else {
-        featureList += "\n            " + this.feature[i];
+        featureList += "\n            " + this.featureList[i];
       }
       //end of if-else statement
     } // end of for loop

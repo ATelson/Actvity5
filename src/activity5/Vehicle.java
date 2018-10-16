@@ -31,11 +31,11 @@ public class Vehicle implements Engine, Chassis {
     this.vehicleManufacturer = "Generic";
     this.vehicleMake = "Generic";
     this.vehicleModel = "Generic";
-    this.vehicleType = "None";
     this.vehicleFrame = new VehicleFrame(); // instantiating new Vehicle object
-    this.vehicleEngine = new ManufacturedEngine(); // instantiating new Manufactured Engine
-    this.vehicleEngine.setEngineType("88 AKI");
-    this.vehicleEngine.setDriveTrain("2WD: Two-Wheel Drive");
+    this.vehicleType = "Generic";
+    this.vehicleEngine = new ManufacturedEngine(); //instantiating manufacturedEngine object
+    this.vehicleEngine.setDriveTrain("Generic");
+    this.vehicleEngine.setEngineType("Generic");
   }
 
   /**
@@ -51,14 +51,16 @@ public class Vehicle implements Engine, Chassis {
    * @param engine is used to set properties of the engine using referencing to the Engine
    * interface.
    */
-  public Vehicle(String vehicleManufacturer, Date vehicleManufacturedDate, String vehicleMake,
-      String vehicleModel, String vehicleType, Chassis vehicleFrame, Engine engine) {
-    this.vehicleManufacturer = vehicleManufacturer;
+  public Vehicle(Date vehicleManufacturedDate, String vehicleManufacturer, String vehicleMake,
+      String vehicleModel, Chassis vehicleFrame, String vehicleType, String driveTrain,
+      Engine engine) {
     this.vehicleManufacturedDate = vehicleManufacturedDate;
+    this.vehicleManufacturer = vehicleManufacturer;
     this.vehicleMake = vehicleMake;
     this.vehicleModel = vehicleModel;
-    this.vehicleType = vehicleType;
     this.vehicleFrame = vehicleFrame;
+    this.vehicleType = vehicleType;
+    this.driveTrain = driveTrain;
     this.vehicleEngine = engine;
   }
 
@@ -152,7 +154,7 @@ public class Vehicle implements Engine, Chassis {
    */
   @Override
   public Chassis getChassisType() {
-    return this.vehicleFrame.getChassisType();
+    return vehicleFrame;
   }
 
   /**
@@ -178,6 +180,6 @@ public class Vehicle implements Engine, Chassis {
         + "Vehicle Make           : " + this.vehicleMake + "\n"
         + "Vehicle Model          : " + this.vehicleModel + "\n"
         + "Vehicle Type           : " + this.vehicleType + "\n"
-        + this.vehicleEngine.toString();
+        + vehicleEngine.toString();
   }
 }

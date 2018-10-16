@@ -17,7 +17,7 @@ public class VehicleChassis implements Chassis {
    * A public default constructor that sets chassisName to Chassis.
    */
   public VehicleChassis() {
-    this.chassisName = chassis;
+    this.chassisName = Chassis.chassis;
   }
 
   /**
@@ -46,16 +46,13 @@ public class VehicleChassis implements Chassis {
    * @param vehicleChassis is used to set chassisName to vehicleChassis.
    */
   public void setChassisType(String vehicleChassis) {
-    chassisName = vehicleChassis;
+    this.chassisName = vehicleChassis;
   }
 
   /**
    * A public toString method that returns the following: Chassis Name : Chassis.
    */
   public String toString() {
-    return "Manufacturer  : " + chassisName + "\n"
-        + "Serial Number : " + chassisName + "\n"
-        + "Date          : " + chassisName + "\n"
-        + "Name          : " + chassisName;
+    return "Chassis Name  : " + this.chassisName;
   }
 }
